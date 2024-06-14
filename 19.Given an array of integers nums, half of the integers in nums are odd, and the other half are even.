@@ -1,0 +1,31 @@
+#include <stdio.h>
+void generateHalfOddHalfEven(int nums[], int size)
+{
+    int oddIndex = 0;
+    int evenIndex = size / 2;
+    for (int i = 0; i < size; i++)
+    {
+        if (i % 2 == 0)
+        {
+            nums[oddIndex] = 2 * i + 1;
+            oddIndex++;
+        }
+        else
+        {
+            nums[evenIndex] = 2 * i;
+            evenIndex++;
+        }
+    }
+}
+int main() 
+{
+    int size = 10;
+    int nums[size];
+    generateHalfOddHalfEven(nums, size);
+    printf("Generated Array: ");
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d ", nums[i]);
+    }
+    return 0;
+}
